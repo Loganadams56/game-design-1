@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7br5gnujs5t4"]
+
+[ext_resource type="Script" path="res://logan.gd" id="1_eyrye"]
+
+[node name="logan" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = 10.0
+offset_right = -7.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eyrye")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 43.0
+offset_right = 569.0
+offset_bottom = 182.0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 283.0
+offset_right = 423.0
+offset_bottom = 385.0
+text = "clear"
+
+[node name="on button pressed" type="Button" parent="."]
+layout_mode = 0
+offset_left = 173.0
+offset_top = 183.0
+offset_right = 408.0
+offset_bottom = 260.0
+text = "click here!(:"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

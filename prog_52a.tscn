@@ -1,0 +1,86 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvsn1g1kcrg6v"]
+
+[ext_resource type="Script" path="res://lblout.gd" id="1_jk07p"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_j6r6w"]
+font_size = 17
+
+[node name="prog52a" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -4.0
+offset_right = 1.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jk07p")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_top = 3.0
+offset_right = 156.0
+offset_bottom = 77.0
+text = "lenght"
+label_settings = SubResource("LabelSettings_j6r6w")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 98.0
+offset_right = 158.0
+offset_bottom = 172.0
+text = "width:"
+label_settings = SubResource("LabelSettings_j6r6w")
+
+[node name="lblout" type="Label" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 193.0
+offset_right = 484.0
+offset_bottom = 409.0
+label_settings = SubResource("LabelSettings_j6r6w")
+
+[node name="btncalc" type="Button" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 443.0
+offset_right = 153.0
+offset_bottom = 501.0
+text = "calculate "
+
+[node name="btnclear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 235.0
+offset_top = 438.0
+offset_right = 385.0
+offset_bottom = 496.0
+text = "clear"
+
+[node name="btnexit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 537.0
+offset_top = 436.0
+offset_right = 687.0
+offset_bottom = 494.0
+text = "exit"
+
+[node name="txtlen" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 2.0
+offset_right = 374.0
+offset_bottom = 47.0
+
+[node name="txtwid" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 62.0
+offset_right = 374.0
+offset_bottom = 107.0
+
+[connection signal="pressed" from="btncalc" to="." method="_on_btncalc_pressed"]
+[connection signal="pressed" from="btnclear" to="." method="_on_btnclear_pressed"]
+[connection signal="pressed" from="btnexit" to="." method="_on_btnexit_pressed"]
