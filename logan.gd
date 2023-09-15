@@ -14,5 +14,5 @@ func _on_btnclear_pressed():
 
 
 func _on_btnclick_pressed():
-	$Label.text = "My name is logan"
+	$Label.text = "My name is logan Adams"
 

@@ -16,7 +16,7 @@ func _on_btncalc_pressed():
 	var carspeed = int($txtspeed.text)
 	var milesover = carspeed - speedlimit
 	var fine = 20 + (milesover * 5)
-	$lblout.text = "fine: %.2f" % fine 
+	$lbout.text = "fine: %.2f" %fine 
 	
 	
 	

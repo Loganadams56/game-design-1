@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://logan.gd" id="1_eyrye"]
 
-[node name="logan" type="Control"]
+[node name="My name" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
