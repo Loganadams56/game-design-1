@@ -1,0 +1,61 @@
+[gd_scene load_steps=2 format=3 uid="uid://qh2eber38mbv"]
+
+[ext_resource type="Script" path="res://Lp4-1.gd" id="1_t6uor"]
+
+[node name="Lp4-1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t6uor")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 288.0
+offset_bottom = 95.0
+text = "eneter the numbers of copies:"
+
+[node name="Lblout" type="Label" parent="."]
+layout_mode = 0
+offset_top = 118.0
+offset_right = 819.0
+offset_bottom = 432.0
+
+[node name="txtcopies" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 285.0
+offset_top = -2.0
+offset_right = 600.0
+offset_bottom = 68.0
+
+[node name="btnclear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 316.0
+offset_top = 484.0
+offset_right = 486.0
+offset_bottom = 560.0
+text = "clear"
+
+[node name="btncalc" type="Button" parent="btnclear"]
+layout_mode = 0
+offset_left = -226.0
+offset_top = -5.0
+offset_right = -33.0
+offset_bottom = 74.0
+text = "claculate"
+
+[node name="btnexit" type="Button" parent="btnclear"]
+layout_mode = 0
+offset_left = 217.0
+offset_top = -2.0
+offset_right = 410.0
+offset_bottom = 77.0
+text = "exit"
+
+[connection signal="pressed" from="btnclear" to="." method="_on_btnclear_pressed"]
+[connection signal="pressed" from="btnclear/btncalc" to="." method="_on_btncalc_pressed"]
+[connection signal="pressed" from="btnclear/btnexit" to="." method="_on_btnexit_pressed"]
