@@ -1,0 +1,77 @@
+[gd_scene load_steps=2 format=3 uid="uid://djgiib0om58ed"]
+
+[ext_resource type="Script" path="res://prog88a.gd" id="1_eu8le"]
+
+[node name="prog88a" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eu8le")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 2.0
+offset_right = 125.0
+offset_bottom = 49.0
+text = "num:1"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 66.0
+offset_right = 119.0
+offset_bottom = 113.0
+text = "num:2"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 139.0
+offset_right = 209.0
+offset_bottom = 225.0
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 139.0
+offset_top = 1.0
+offset_right = 300.0
+offset_bottom = 52.0
+
+[node name="LineEdit2" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 142.0
+offset_top = 79.0
+offset_right = 303.0
+offset_bottom = 130.0
+
+[node name="btncalc" type="Button" parent="."]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 275.0
+offset_right = 227.0
+offset_bottom = 320.0
+text = "calulate"
+
+[node name="btnclear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 277.0
+offset_right = 396.0
+offset_bottom = 322.0
+text = "clear"
+
+[node name="btnexit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 425.0
+offset_top = 277.0
+offset_right = 581.0
+offset_bottom = 322.0
+text = "exit"
+
+[connection signal="pressed" from="btncalc" to="." method="_on_btncalc_pressed"]
+[connection signal="pressed" from="btnclear" to="." method="_on_btnclear_pressed"]
+[connection signal="pressed" from="btnexit" to="." method="_on_btnexit_pressed"]
