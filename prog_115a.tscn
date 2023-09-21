@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyxw7awq4ulq4"]
+
+[ext_resource type="Script" path="res://prog115a.gd" id="1_clh1w"]
+
+[node name="prog115a" type="Control"]
+layout_mode = 3
+anchor_right = 1.279
+anchor_bottom = 1.142
+offset_top = -1.0
+offset_right = -0.408081
+offset_bottom = -0.0160522
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_clh1w")
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 94.0
+offset_right = 1043.0
+offset_bottom = 472.0
+
+[node name="btncalc" type="Button" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 513.0
+offset_right = 372.0
+offset_bottom = 649.0
+text = "claculate"
+
+[node name="btnclear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 386.0
+offset_top = 509.0
+offset_right = 759.0
+offset_bottom = 645.0
+text = "claculate"
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 785.0
+offset_top = 512.0
+offset_right = 1158.0
+offset_bottom = 648.0
+text = "claculate"
+
+[connection signal="pressed" from="btncalc" to="." method="_on_btncalc_pressed"]
+[connection signal="pressed" from="btnclear" to="." method="_on_btnclear_pressed"]

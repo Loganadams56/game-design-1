@@ -23,7 +23,7 @@ text = "eneter the numbers of copies:"
 layout_mode = 0
 offset_top = 118.0
 offset_right = 819.0
-offset_bottom = 432.0
+offset_bottom = 340.0
 
 [node name="txtcopies" type="LineEdit" parent="."]
 layout_mode = 0
@@ -34,10 +34,10 @@ offset_bottom = 68.0
 
 [node name="btnclear" type="Button" parent="."]
 layout_mode = 0
-offset_left = 316.0
-offset_top = 484.0
-offset_right = 486.0
-offset_bottom = 560.0
+offset_left = 295.0
+offset_top = 403.0
+offset_right = 465.0
+offset_bottom = 479.0
 text = "clear"
 
 [node name="btncalc" type="Button" parent="btnclear"]
