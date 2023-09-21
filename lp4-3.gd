@@ -12,13 +12,16 @@ func _process(delta):
 
 
 func _on_btncalc_pressed():
-	pass # Replace with function body.
+	var eggs = int($txtcopies.text)
+	var dozen= floor(eggs/12)
+	var reminder = eggs % 12
+	
 
 
 func _on_btnclear_pressed():
-	$Label.text = ""
-	$Label2.text = ""
-	$Label3.text = ""
+	$txtcopies.text = ""
+	$Lblout.text = ""
+	
 
 func _on_btnexit_pressed():
 	get_tree().quit()

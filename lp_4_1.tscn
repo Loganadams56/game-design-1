@@ -21,16 +21,17 @@ text = "eneter the numbers of copies:"
 
 [node name="Lblout" type="Label" parent="."]
 layout_mode = 0
-offset_top = 118.0
-offset_right = 819.0
-offset_bottom = 340.0
+offset_left = 75.0
+offset_top = 76.0
+offset_right = 662.0
+offset_bottom = 387.0
 
 [node name="txtcopies" type="LineEdit" parent="."]
 layout_mode = 0
-offset_left = 285.0
-offset_top = -2.0
-offset_right = 600.0
-offset_bottom = 68.0
+offset_left = 237.0
+offset_top = 1.0
+offset_right = 552.0
+offset_bottom = 71.0
 
 [node name="btnclear" type="Button" parent="."]
 layout_mode = 0
