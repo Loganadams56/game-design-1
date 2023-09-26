@@ -34,7 +34,7 @@ offset_left = 386.0
 offset_top = 509.0
 offset_right = 759.0
 offset_bottom = 645.0
-text = "claculate"
+text = "clear"
 
 [node name="Button3" type="Button" parent="."]
 layout_mode = 0
@@ -42,7 +42,8 @@ offset_left = 785.0
 offset_top = 512.0
 offset_right = 1158.0
 offset_bottom = 648.0
-text = "claculate"
+text = "exit"
 
 [connection signal="pressed" from="btncalc" to="." method="_on_btncalc_pressed"]
 [connection signal="pressed" from="btnclear" to="." method="_on_btnclear_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

@@ -1,0 +1,60 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgjhmjgqtrjeb"]
+
+[ext_resource type="Script" path="res://prog_58b.gd" id="1_eravs"]
+
+[node name="prog_58b" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eravs")
+
+[node name="txtA" type="LineEdit" parent="."]
+layout_mode = 0
+offset_right = 182.0
+offset_bottom = 52.0
+
+[node name="txtB" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 96.0
+offset_right = 181.0
+offset_bottom = 148.0
+
+[node name="txtC" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 188.0
+offset_right = 184.0
+offset_bottom = 240.0
+
+[node name="btncalc" type="Button" parent="."]
+layout_mode = 0
+offset_left = 443.0
+offset_top = 327.0
+offset_right = 560.0
+offset_bottom = 388.0
+rotation = 0.015404
+text = "exit"
+
+[node name="btnclear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 119.0
+offset_top = 328.0
+offset_right = 236.0
+offset_bottom = 389.0
+text = "calculate"
+
+[node name="btnexit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 297.0
+offset_top = 330.0
+offset_right = 414.0
+offset_bottom = 391.0
+text = "clear"
+
+[connection signal="pressed" from="btncalc" to="." method="_on_btncalc_pressed"]
+[connection signal="pressed" from="btnclear" to="." method="_on_btnclear_pressed"]
+[connection signal="pressed" from="btnexit" to="." method="_on_btnexit_pressed"]

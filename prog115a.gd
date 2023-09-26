@@ -21,3 +21,7 @@ func _on_btncalc_pressed():
 
 func _on_btnclear_pressed():
 	$ItemList.clear()
+
+
+func _on_button_3_pressed():
+	get_tree().quit()

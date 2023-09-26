@@ -17,7 +17,7 @@ script = ExtResource("1_t6uor")
 layout_mode = 0
 offset_right = 288.0
 offset_bottom = 95.0
-text = "eneter the numbers of copies:"
+text = "eneter the numbers of eggs:"
 
 [node name="Lblout" type="Label" parent="."]
 layout_mode = 0

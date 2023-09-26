@@ -12,24 +12,16 @@ func _process(delta):
 
 
 func _on_btncalc_pressed():
-	var eggs = int($txtcopies.text)
-	var dozen = floor(eggs/12)
-	var reminder = eggs % 12
-	var sum = (0.45)
-	var 
-	var
-	var
-	var
-	var
-	var
-	
-	
-
+	$ItemList.add_item("number   square   square root ")
+	for num in range(1, 51):
+		var numsquared = num**2 
+		var numsqrt = sqrt(num)
+		var line = "%d      %d     %.4f" % [num, numsquared, numsqrt]
+		$ItemList.add_item(line)
 
 func _on_btnclear_pressed():
-	$txtcopies.text = ""
-	$Lblout.text = ""
-	
+	$ItemList.clear()
+
 
 func _on_btnexit_pressed():
 	get_tree().quit()
