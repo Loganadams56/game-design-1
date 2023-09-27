@@ -13,24 +13,25 @@ func _process(delta):
 
 func _on_btncalc_pressed():
 	var copies = int($txtcopies.text)
-	var price = 0.45
-	var cost = 0.0
+	var price = 0.45  # price per copy
+	var cost = 0.0   # total cost
 	if copies > 0 and copies <= 99:
 		price = 0.30
-	elif copies >99 and copies <= 499:
+	elif copies > 99 and copies <= 499:
 		price = 0.28
 	elif copies > 499 and copies <= 749:
 		price = 0.27
-	elif copies > 499 and copies <= 1000:
+	elif copies > 749 and copies <= 1000:
 		price = 0.26
 	elif copies > 1000:
 		price = 0.25
 	else:
-		$Lblout.text = "invaild number of copies"
+		$Lblout.text = "Invalid number of copies"
 		return
 	cost = price * copies
-	$Lblout.text = "price per copy is $" + str(price) + \
-						"\ntotal cost is $%.2f" % cost
+	$Lblout.text = "Price per copy is $" + str(price) + \
+				   "\nTotal cost is $%.2f" % cost
+
 
 
 func _on_btnclear_pressed():

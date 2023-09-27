@@ -13,18 +13,18 @@ func _process(delta):
 
 
 func _on_btncalc_pressed():
-	var A = int($txta.text)
-	var B = int($txtb.text)
-	var c = int($txtc.text)
-	var proot = (-B + sqrt(b**2- 4 * A * C)) / 2 * A
-	var nroot = (-B - sqrt(b**2- 4 * A * C)) / 2 * A
-	$lblout.text = "roots are %d and %d" % [proot, nroot
+	var A = int($txtA.text)
+	var B = int($txtB.text)
+	var c = int($txtC.text)
+	var proot = (-B + sqrt(B**2 - 4 * A * C) / 2 * A
+	var nroot = (-B - sqrt(B**2 - 4 * A * c)) / 2 * A
+	$lblout.text = "roots are %d and %d" % [proot, nroot]
 
 
 func _on_btnclear_pressed():
-	$txtA.text = ""
-	$txtB.text = ""
-	$txtC.text = ""
+	$txtA.text = "clear"
+	$txtB.text = "clear"
+	$txtC.text = "clear"
 	$lblout.text = ""
 
 
