@@ -30,7 +30,7 @@ offset_top = 188.0
 offset_right = 184.0
 offset_bottom = 240.0
 
-[node name="btncalc" type="Button" parent="."]
+[node name="btnexit2" type="Button" parent="."]
 layout_mode = 0
 offset_left = 443.0
 offset_top = 327.0
@@ -39,7 +39,7 @@ offset_bottom = 388.0
 rotation = 0.015404
 text = "exit"
 
-[node name="btnclear" type="Button" parent="."]
+[node name="btncalc" type="Button" parent="."]
 layout_mode = 0
 offset_left = 119.0
 offset_top = 328.0
@@ -47,7 +47,7 @@ offset_right = 236.0
 offset_bottom = 389.0
 text = "calculate"
 
-[node name="btnexit" type="Button" parent="."]
+[node name="btnclear" type="Button" parent="."]
 layout_mode = 0
 offset_left = 297.0
 offset_top = 330.0
@@ -55,6 +55,13 @@ offset_right = 414.0
 offset_bottom = 391.0
 text = "clear"
 
+[node name="lblout" type="Label" parent="."]
+layout_mode = 0
+offset_left = 229.0
+offset_top = 12.0
+offset_right = 844.0
+offset_bottom = 272.0
+
+[connection signal="pressed" from="btnexit2" to="." method="_on_btnexit_2_pressed"]
 [connection signal="pressed" from="btncalc" to="." method="_on_btncalc_pressed"]
 [connection signal="pressed" from="btnclear" to="." method="_on_btnclear_pressed"]
-[connection signal="pressed" from="btnexit" to="." method="_on_btnexit_pressed"]
