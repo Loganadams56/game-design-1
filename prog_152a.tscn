@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://dc8bq8ooift86"]
+
+[ext_resource type="Script" path="res://prog_152a.gd" id="1_1jkym"]
+
+[node name="prog_152a" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1jkym")
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 52.0
+offset_right = 749.0
+offset_bottom = 288.0
+
+[node name="btncalc" type="Button" parent="."]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 356.0
+offset_right = 215.0
+offset_bottom = 428.0
+text = "calculate"
+
+[node name="btnclear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 325.0
+offset_top = 357.0
+offset_right = 478.0
+offset_bottom = 429.0
+text = "clear"
+
+[node name="btnexit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 561.0
+offset_top = 360.0
+offset_right = 714.0
+offset_bottom = 432.0
+text = "exit"
+
+[connection signal="pressed" from="btncalc" to="." method="_on_btncalc_pressed"]
