@@ -20,6 +20,8 @@ offset_top = 6.0
 offset_right = 700.0
 offset_bottom = 189.0
 text = "score"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
@@ -31,24 +33,24 @@ text = "Modify points(add/sub"
 
 [node name="LineEdit" type="LineEdit" parent="Label2"]
 layout_mode = 0
-offset_left = 208.0
-offset_right = 311.0
-offset_bottom = 37.0
+offset_left = 186.0
+offset_right = 461.0
+offset_bottom = 64.0
 
 [node name="btnupdate" type="Button" parent="."]
 layout_mode = 0
-offset_left = 38.0
-offset_top = 301.0
-offset_right = 202.0
-offset_bottom = 352.0
+offset_left = 210.0
+offset_top = 302.0
+offset_right = 374.0
+offset_bottom = 353.0
 text = "update"
 
 [node name="btnreset" type="Button" parent="."]
 layout_mode = 0
-offset_left = 249.0
-offset_top = 301.0
-offset_right = 413.0
-offset_bottom = 352.0
+offset_left = 435.0
+offset_top = 303.0
+offset_right = 599.0
+offset_bottom = 354.0
 text = "reset"
 
 [connection signal="pressed" from="btnupdate" to="." method="_on_btnupdate_pressed"]

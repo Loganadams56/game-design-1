@@ -7,24 +7,28 @@ extends Control
 
 
 func _on_add_pressed():
-	pass # Replace with function body.
+	myadd(num1,num2)
 
 
 func _on_sub_pressed():
-	pass # Replace with function body.
+	mysub(num1,num2)
+
 
 
 func _on_multi_pressed():
-	pass # Replace with function body.
+	myulti(num1,num2)
+
 
 
 func _on_divied_pressed():
-	pass # Replace with function body.
+	myduvied(num1,num2)
 
 
 func _on_clear_pressed():
-	pass # Replace with function body.
+	$num1.text = ""
+	$num2.text = ""
+	$lblout.text = ""
 
 
 func _on_exit_pressed():
-	pass # Replace with function body.
+	get_tree().quit()
