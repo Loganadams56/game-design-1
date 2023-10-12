@@ -1,37 +1,41 @@
-[gd_scene load_steps=9 format=3 uid="uid://c1lx5re1phbd6"]
+[gd_scene load_steps=11 format=3 uid="uid://c1lx5re1phbd6"]
 
 [ext_resource type="Script" path="res://kbdplayer.gd" id="1_ct2rc"]
 [ext_resource type="Script" path="res://kbd_ctrl.gd" id="1_pulpn"]
 [ext_resource type="Texture2D" uid="uid://eee8ib6c4454" path="res://icon.svg" id="2_vpj2m"]
+[ext_resource type="PackedScene" uid="uid://bq6xsa5j1vuwg" path="res://kbd_enemy.tscn" id="4_17l2b"]
+[ext_resource type="PackedScene" uid="uid://d0hsmco3cbc8i" path="res://kbd_exit.tscn" id="5_6l06m"]
+[ext_resource type="Script" path="res://kbd_exit.gd" id="6_rcgyw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_td77p"]
-radius = 19.0
-height = 52.0
+radius = 11.0
+height = 22.0
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_i044e"]
 a = Vector2(218, 10)
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ifhin"]
-
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4d2lp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1o1b0"]
-size = Vector2(44, 49.5)
+size = Vector2(46.0007, 49.7659)
 
 [node name="kbd_ctrl" type="Node2D"]
 script = ExtResource("1_pulpn")
 
-[node name="kbdplayer" type="CharacterBody2D" parent="."]
+[node name="kbd_player" type="CharacterBody2D" parent="."]
+position = Vector2(1, 28)
 script = ExtResource("1_ct2rc")
 
-[node name="Sprite2D" type="Sprite2D" parent="kbdplayer"]
-position = Vector2(82, 29)
-scale = Vector2(0.351563, 0.414063)
+[node name="Sprite2D" type="Sprite2D" parent="kbd_player"]
+position = Vector2(73, 14)
+scale = Vector2(0.195313, 0.183594)
 texture = ExtResource("2_vpj2m")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="kbdplayer"]
-position = Vector2(81, 29)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kbd_player"]
+position = Vector2(73, 14)
 shape = SubResource("CapsuleShape2D_td77p")
+
+[node name="Area2D" type="Area2D" parent="kbd_player"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(351, 191)
@@ -40,57 +44,62 @@ position = Vector2(351, 191)
 position = Vector2(1, 56)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="start_platform"]
-position = Vector2(0, -10)
+position = Vector2(29, -7)
 shape = SubResource("SegmentShape2D_i044e")
 
 [node name="world" type="StaticBody2D" parent="."]
 position = Vector2(-19, 5)
 
-[node name="Sprite2D" type="Sprite2D" parent="world"]
-position = Vector2(129.125, 51)
-scale = Vector2(213.75, 1.75)
-texture = SubResource("PlaceholderTexture2D_ifhin")
-
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="world"]
-position = Vector2(575, 258)
+position = Vector2(567, 255)
 rotation = -3.11692
 scale = Vector2(0.743827, 0.753308)
-polygon = PackedVector2Array(14, 11, -62, 149, -45, 211, 29, 192, 57, 130, 97, 209, 188, 137, 223, 173, 278, 207, 312, 130, 288, 135, 352, 88, 446, 13, 493, 1, 503, 81, 527, 149, 505, 199, 548, 226, 616, 105, 641, 3, 688, 101, 748, -110, 182, -133, -3, -104, -1, -6, -1, -4)
+polygon = PackedVector2Array(14, 11, -26.6492, 117.503, -13.8567, 145.077, 29, 192, 57, 130, 117.074, 164.46, 188, 137, 223, 173, 260.781, 156.975, 312, 130, 288, 135, 375.801, 131.598, 412.088, 130.714, 457.718, 126.947, 496.859, 132.632, 527, 149, 555.995, 131.191, 589.544, 182.161, 616, 105, 641, 3, 688, 101, 748, -110, 182, -133, -3, -104, -1, -6, -1, -4)
+
+[node name="Polygon2D" type="Polygon2D" parent="world/CollisionPolygon2D"]
 
 [node name="interact" type="RigidBody2D" parent="."]
 position = Vector2(511, 48)
 input_pickable = true
 
 [node name="Sprite2D" type="Sprite2D" parent="interact"]
-position = Vector2(0, 3.8147e-06)
-scale = Vector2(-44.5497, 49.8439)
+position = Vector2(19, 61)
+scale = Vector2(2.72511, 10.764)
 texture = SubResource("PlaceholderTexture2D_4d2lp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interact/Sprite2D"]
-position = Vector2(0, -1.19209e-07)
 rotation = 3.14159
 scale = Vector2(0.0224468, -0.0200626)
 shape = SubResource("RectangleShape2D_1o1b0")
 
 [node name="draggable" type="RigidBody2D" parent="."]
+position = Vector2(-64, 32)
 freeze = true
 
 [node name="Sprite2D" type="Sprite2D" parent="draggable"]
-position = Vector2(0, 3.8147e-06)
+position = Vector2(-61, 12)
 scale = Vector2(-44.5497, 49.8439)
 texture = SubResource("PlaceholderTexture2D_4d2lp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="draggable"]
-position = Vector2(0, 0.25)
+position = Vector2(-61, 14)
 shape = SubResource("RectangleShape2D_1o1b0")
 
 [node name="Button" type="Button" parent="draggable"]
-offset_left = -21.0
-offset_top = -24.0
-offset_right = 21.0
-offset_bottom = 25.0
+offset_left = -82.0
+offset_top = -10.0
+offset_right = -40.0
+offset_bottom = 39.0
 focus_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="kbd_enemy" parent="." instance=ExtResource("4_17l2b")]
+position = Vector2(167, 46)
+
+[node name="kbd_exit" parent="." instance=ExtResource("5_6l06m")]
+script = ExtResource("6_rcgyw")
 
 [connection signal="mouse_entered" from="interact" to="." method="_on_interact_mouse_entered"]
 [connection signal="button_down" from="draggable/Button" to="." method="_on_button_button_down"]
 [connection signal="button_up" from="draggable/Button" to="." method="_on_button_button_up"]
+[connection signal="body_entered" from="kbd_exit" to="kbd_exit" method="_on_body_entered"]
