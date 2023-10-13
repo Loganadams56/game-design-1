@@ -2,13 +2,12 @@
 
 [ext_resource type="Script" path="res://kbd_platformer.gd" id="1_2d66j"]
 [ext_resource type="PackedScene" uid="uid://bq6xsa5j1vuwg" path="res://kbd_enemy.tscn" id="2_0ftyc"]
-[ext_resource type="Texture2D" uid="uid://eee8ib6c4454" path="res://icon.svg" id="3_25jrx"]
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_r57vf"]
-a = Vector2(-345, -18)
-b = Vector2(516, -9)
+[ext_resource type="PackedScene" uid="uid://6nimbcbmqwyb" path="res://kbd_player.tscn" id="3_ip8tt"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_si2g0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1xpfj"]
+size = Vector2(144, 24)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6lyso"]
 
@@ -16,38 +15,47 @@ b = Vector2(516, -9)
 script = ExtResource("1_2d66j")
 
 [node name="kbd_enemy" parent="." instance=ExtResource("2_0ftyc")]
-position = Vector2(511, 202)
+position = Vector2(447, 196)
 
 [node name="world" type="StaticBody2D" parent="."]
 position = Vector2(46, 56)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="world"]
-position = Vector2(300, 211)
-shape = SubResource("SegmentShape2D_r57vf")
-debug_color = Color(0, 0.643137, 0.321569, 0.419608)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="world"]
+position = Vector2(-46, -56)
+polygon = PackedVector2Array(-5, 4, -26, 119, -29, 248, 17, 246, 96, 251, 201, 251, 335, 249, 402, 248, 534, 249, 640, 248, 694, 252, 730, 242, 788, 208, 769, 231, 769, 233, 815, 179, 836, 169, 844, 149, 867, 141, 879, 149, 886, 191, 938, 218, 1013, 213, 1069, 215, 1103, 192, 925, 353, 324, 258, 111, 354, -31, 249, -107, 263)
+
+[node name="Polygon2D" type="Polygon2D" parent="world/CollisionPolygon2D"]
 
 [node name="kbd_enemy2" parent="." instance=ExtResource("2_0ftyc")]
-position = Vector2(158, 199)
-
-[node name="kbd_player" type="CharacterBody2D" parent="."]
-position = Vector2(135, 52)
-
-[node name="Sprite2D" type="Sprite2D" parent="kbd_player"]
-position = Vector2(-116, 178)
-scale = Vector2(0.132813, 0.257813)
-texture = ExtResource("3_25jrx")
+position = Vector2(251, 197)
 
 [node name="interact" type="RigidBody2D" parent="."]
+freeze = true
 
-[node name="Sprite2D" type="Sprite2D" parent="interact"]
+[node name="kbd_player" parent="." instance=ExtResource("3_ip8tt")]
+position = Vector2(20, 225)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
 modulate = Color(0.937255, 0.592157, 0.615686, 1)
 self_modulate = Color(0.67451, 1, 0, 1)
-position = Vector2(194.812, 189)
+position = Vector2(299, 172)
 scale = Vector2(142.375, 27.25)
 texture = SubResource("PlaceholderTexture2D_si2g0")
 
-[node name="Sprite2D2" type="Sprite2D" parent="interact"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(299, 173)
+shape = SubResource("RectangleShape2D_1xpfj")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(546, 115)
+shape = SubResource("RectangleShape2D_1xpfj")
+
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D2"]
 self_modulate = Color(0.368627, 1, 0.803922, 1)
-position = Vector2(488, 186)
-scale = Vector2(180.5, 23.75)
+position = Vector2(544.5, 116)
+scale = Vector2(143, 23.75)
 texture = SubResource("PlaceholderTexture2D_6lyso")

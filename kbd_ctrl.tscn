@@ -1,15 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://c1lx5re1phbd6"]
+[gd_scene load_steps=9 format=3 uid="uid://c1lx5re1phbd6"]
 
-[ext_resource type="Script" path="res://kbdplayer.gd" id="1_ct2rc"]
 [ext_resource type="Script" path="res://kbd_ctrl.gd" id="1_pulpn"]
-[ext_resource type="Texture2D" uid="uid://eee8ib6c4454" path="res://icon.svg" id="2_vpj2m"]
+[ext_resource type="PackedScene" uid="uid://6nimbcbmqwyb" path="res://kbd_player.tscn" id="2_mwvjh"]
 [ext_resource type="PackedScene" uid="uid://bq6xsa5j1vuwg" path="res://kbd_enemy.tscn" id="4_17l2b"]
 [ext_resource type="PackedScene" uid="uid://d0hsmco3cbc8i" path="res://kbd_exit.tscn" id="5_6l06m"]
 [ext_resource type="Script" path="res://kbd_exit.gd" id="6_rcgyw"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_td77p"]
-radius = 11.0
-height = 22.0
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_i044e"]
 a = Vector2(218, 10)
@@ -17,25 +12,12 @@ a = Vector2(218, 10)
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4d2lp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1o1b0"]
-size = Vector2(46.0007, 49.7659)
+size = Vector2(38.508, 55.8946)
 
 [node name="kbd_ctrl" type="Node2D"]
 script = ExtResource("1_pulpn")
 
-[node name="kbd_player" type="CharacterBody2D" parent="."]
-position = Vector2(1, 28)
-script = ExtResource("1_ct2rc")
-
-[node name="Sprite2D" type="Sprite2D" parent="kbd_player"]
-position = Vector2(73, 14)
-scale = Vector2(0.195313, 0.183594)
-texture = ExtResource("2_vpj2m")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="kbd_player"]
-position = Vector2(73, 14)
-shape = SubResource("CapsuleShape2D_td77p")
-
-[node name="Area2D" type="Area2D" parent="kbd_player"]
+[node name="kbd_player" parent="." instance=ExtResource("2_mwvjh")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(351, 191)
@@ -61,10 +43,11 @@ polygon = PackedVector2Array(14, 11, -26.6492, 117.503, -13.8567, 145.077, 29, 1
 [node name="interact" type="RigidBody2D" parent="."]
 position = Vector2(511, 48)
 input_pickable = true
+freeze = true
 
 [node name="Sprite2D" type="Sprite2D" parent="interact"]
-position = Vector2(19, 61)
-scale = Vector2(2.72511, 10.764)
+position = Vector2(19, 58)
+scale = Vector2(-5.75558, 16.382)
 texture = SubResource("PlaceholderTexture2D_4d2lp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interact/Sprite2D"]
@@ -94,9 +77,10 @@ focus_mode = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="kbd_enemy" parent="." instance=ExtResource("4_17l2b")]
-position = Vector2(167, 46)
+position = Vector2(55, 104)
 
 [node name="kbd_exit" parent="." instance=ExtResource("5_6l06m")]
+position = Vector2(530, 106)
 script = ExtResource("6_rcgyw")
 
 [connection signal="mouse_entered" from="interact" to="." method="_on_interact_mouse_entered"]
